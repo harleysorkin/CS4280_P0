@@ -1,0 +1,21 @@
+CS 4280 Project 0
+
+Name: Harley Sorkin
+Date: 9/25/2022
+
+Program Overview:
+This program written in C/C++ creates a BST from a given input file, or from keyboard inputs. The purpose of this project is to act as a programming standards and practices refreshment.
+
+Code used in this project is derrived from previous code I wrote for classes (3010 and 2750).
+
+Invocation:
+The program is invoked with the following commands:
+
+./P0			-> Reads input from the keyboard
+./P0 < "somefile"	-> Reads input from specified file "somefile"
+./P0 "somefile"		-> Reads input from "somefile".cs4280
+
+*"somefile" to be replaced by your file name
+
+Outputs:
+All outputs will be found in "somefile".preorder, "somefile".inorder, and "somefile".postorder, respectively according to the type of traversal. Default is "outP0" should no input filename be give.
