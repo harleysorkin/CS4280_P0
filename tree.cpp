@@ -5,6 +5,7 @@
 
 #include "tree.h"
 
+// Creates new node to be added to tree
 void Tree::addTree(char c, std::string s, int i) {
     Node *node = new Node;
     node->data = c;
@@ -15,6 +16,7 @@ void Tree::addTree(char c, std::string s, int i) {
     addNode(root, node);
 }
 
+// Places created node in correct place on tree
 void Tree::addNode(Node *&ptr, Node *&node) {
     if(ptr == NULL){
         ptr = node;
@@ -27,6 +29,7 @@ void Tree::addNode(Node *&ptr, Node *&node) {
     }
 }
 
+// Command to start tree building process. Searches tree for existing nodes matching new node to calculate the correct height
 int Tree::search(char c, Node *root, std::string s) {
     Node *node = root;
     int i = 0;
@@ -50,6 +53,7 @@ int Tree::search(char c, Node *root, std::string s) {
     return 0;
 }
 
+// Inorder traversal
 void Tree::inorder(Node *ptr, char *filename) {
 	filename = strcat(filename, ".inorder");
 	std::ofstream file;
@@ -67,6 +71,7 @@ std::cout << "file opened" << std::endl;
 	file.close();
 }
 
+// Preorder traversal
 void Tree::preorder(Node *ptr, char *filename) {
 	filename = strcat(filename, ".preorder");
 	std::ofstream file;
@@ -84,6 +89,7 @@ std::cout << "file opened" << std::endl;
 	file.close();
 }
 
+// Postorder traversal
 void Tree::postorder(Node *ptr, char *filename) {
 	filename = strcat(filename, ".postorder");	
 	std::ofstream file;

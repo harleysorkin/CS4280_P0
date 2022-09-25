@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
     char *fname = const_cast<char *>(output.c_str());
     Tree tree;
 
+    // Checks if no inputs given, then gets data from keyboard inputs
     if(argc == 1) {
         std::cout << ("No input file given. Please enter data manually.\n");
         getline(std::cin, data);
@@ -24,6 +25,7 @@ int main(int argc, char* argv[]) {
         tree.postorder(tree.root, fname);
     }
 
+    // Checks if filename is given, and appends ".cs4280" to the end
     else if(argc == 2) {
         filename = strcat(argv[1], ".cs4280");
 
@@ -40,6 +42,7 @@ int main(int argc, char* argv[]) {
         tree.postorder(tree.root, fname);
     }
 
+    // Checks if filename given following "<", and attempts to open specified file
     else if(argc == 3) {
         if(argv[1] == "<"){
             filename = argv[2];
