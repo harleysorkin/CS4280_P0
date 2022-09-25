@@ -51,10 +51,10 @@ int Tree::search(char c, Node *root, std::string s) {
 }
 
 void Tree::inorder(Node *ptr, char *filename) {
-	strcat(filename, ".inorder");
+	filename = strcat(filename, ".inorder");
 	std::ofstream file;
 	file.open(filename);
-
+std::cout << "file opened" << std::endl;
 	if(!file) {
 		perror("Error: inorder()");
 	}
@@ -68,10 +68,10 @@ void Tree::inorder(Node *ptr, char *filename) {
 }
 
 void Tree::preorder(Node *ptr, char *filename) {
-	strcat(filename, ".preorder");
+	filename = strcat(filename, ".preorder");
 	std::ofstream file;
 	file.open(filename);
-
+std::cout << "file opened" << std::endl;
 	if(!file) {
 		perror("Error: preorder()");
 	}
@@ -85,10 +85,10 @@ void Tree::preorder(Node *ptr, char *filename) {
 }
 
 void Tree::postorder(Node *ptr, char *filename) {
-	strcat(filename, ".postorder");	
+	filename = strcat(filename, ".postorder");	
 	std::ofstream file;
 	file.open(filename);
-
+std::cout << "file opened" << std::endl;
 	if(!file) {
 		perror("Error: postorder()");
 	}

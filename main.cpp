@@ -9,6 +9,8 @@ int main(int argc, char* argv[]) {
 
     char *filename;
     std::string data;
+    std::string output = "outP0";
+    char *fname = const_cast<char *>(output.c_str());
     Tree tree;
 
     if(argc == 1) {
@@ -17,9 +19,9 @@ int main(int argc, char* argv[]) {
 
         int result = tree.search(data[0], tree.root, data);
 
-        tree.inorder(tree.root, "outP0");
-        tree.preorder(tree.root, "outP0");
-        tree.postorder(tree.root, "outP0");
+        tree.inorder(tree.root, fname);
+        tree.preorder(tree.root, fname);
+        tree.postorder(tree.root, fname);
     }
 
     else if(argc == 2) {
@@ -33,9 +35,9 @@ int main(int argc, char* argv[]) {
        
         int result = tree.search(data[0], tree.root, data);
 
-        tree.inorder(tree.root, "outP0");
-        tree.preorder(tree.root, "outP0");
-        tree.postorder(tree.root, "outP0");
+        tree.inorder(tree.root, fname);
+        tree.preorder(tree.root, fname);
+        tree.postorder(tree.root, fname);
     }
 
     else if(argc == 3) {
@@ -50,9 +52,9 @@ int main(int argc, char* argv[]) {
 
             int result = tree.search(data[0], tree.root, data);
 
-            tree.inorder(tree.root, "outP0");
-            tree.preorder(tree.root, "outP0");
-            tree.postorder(tree.root, "outP0");
+            tree.inorder(tree.root, fname);
+            tree.preorder(tree.root, fname);
+            tree.postorder(tree.root, fname);
         }
     }
 
