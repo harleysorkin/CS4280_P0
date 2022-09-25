@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -g
 TARGET = P0
-OBJS = tree.o
+OBJS = tree.o main.o
 .SUFFIXES: .cpp .o
 
 .DEFAULT_GOAL : $(TARGET)

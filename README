@@ -17,5 +17,7 @@ The program is invoked with the following commands:
 
 *"somefile" to be replaced by your file name
 
+The project comes with a Makefile. Use 'make' to create the executable and 'make clean' to remove targets, executables, and output files.
+
 Outputs:
 All outputs will be found in "somefile".preorder, "somefile".inorder, and "somefile".postorder, respectively according to the type of traversal. Default is "outP0" should no input filename be give.
