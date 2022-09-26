@@ -19,6 +19,25 @@ int main(int argc, char* argv[]) {
 
     // Checks if no inputs given, then gets data from keyboard inputs
     if(argc == 1) {
+
+	if(argv[1] == "<"){
+            filename = argv[2];
+
+            std::ifstream file;
+            file.open(filename);
+            std::ostringstream temp;
+            temp << file.rdbuf();
+            data = temp.str();
+
+            int result = tree.search(data[0], tree.root, data);
+
+
+            tree.inorder(tree.root, fnamein);
+            tree.preorder(tree.root, fnamepre);
+            tree.postorder(tree.root, fnamepost);
+        }
+
+
         std::cout << ("No input file given. Please enter data manually.\n");
         getline(std::cin, data);
 
@@ -44,26 +63,6 @@ int main(int argc, char* argv[]) {
         tree.inorder(tree.root, fnamein);
         tree.preorder(tree.root, fnamepre);
         tree.postorder(tree.root, fnamepost);
-    }
-
-    // Checks if filename given following "<", and attempts to open specified file
-    else if(argc == 3) {
-        if(argv[1] == "<"){
-            filename = argv[2];
-
-            std::ifstream file;
-            file.open(filename);
-            std::ostringstream temp;
-	    temp << file.rdbuf();
-	    data = temp.str();
-
-            int result = tree.search(data[0], tree.root, data);
-
-	    
-            tree.inorder(tree.root, fnamein);
-            tree.preorder(tree.root, fnamepre);
-            tree.postorder(tree.root, fnamepost);
-        }
     }
 
     else {

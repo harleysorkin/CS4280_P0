@@ -12,7 +12,7 @@ Invocation:
 The program is invoked with the following commands:
 
 ./P0			-> Reads input from the keyboard
-./P0 < "somefile"	-> Reads input from specified file "somefile"
+./P0 < "somefile"	-> Reads input from specified file "somefile" ** Currently not working**
 ./P0 "somefile"		-> Reads input from "somefile".cs4280
 
 *"somefile" to be replaced by your file name
@@ -21,3 +21,6 @@ The project comes with a Makefile. Use 'make' to create the executable and 'make
 
 Outputs:
 All outputs will be found in "somefile".preorder, "somefile".inorder, and "somefile".postorder, respectively according to the type of traversal. Default is "outP0" should no input filename be give.
+
+Notes:
+Cannot parse second invocation.
