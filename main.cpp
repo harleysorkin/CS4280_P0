@@ -9,8 +9,12 @@ int main(int argc, char* argv[]) {
 
     char *filename;
     std::string data;
-    std::string output = "outP0";
-    char *fname = const_cast<char *>(output.c_str());
+    std::string in = "outP0.inorder";
+    std::string pre = "outP0.preorder";
+    std::string post = "outP0.postorder";
+    char *fnamein = const_cast<char *>(in.c_str());
+    char *fnamepre = const_cast<char *>(pre.c_str());
+    char *fnamepost = const_cast<char *>(post.c_str());
     Tree tree;
 
     // Checks if no inputs given, then gets data from keyboard inputs
@@ -20,9 +24,9 @@ int main(int argc, char* argv[]) {
 
         int result = tree.search(data[0], tree.root, data);
 
-        tree.inorder(tree.root, fname);
-        tree.preorder(tree.root, fname);
-        tree.postorder(tree.root, fname);
+        tree.inorder(tree.root, fnamein);
+        tree.preorder(tree.root, fnamepre);
+        tree.postorder(tree.root, fnamepost);
     }
 
     // Checks if filename is given, and appends ".cs4280" to the end
@@ -37,9 +41,9 @@ int main(int argc, char* argv[]) {
        
         int result = tree.search(data[0], tree.root, data);
 
-        tree.inorder(tree.root, fname);
-        tree.preorder(tree.root, fname);
-        tree.postorder(tree.root, fname);
+        tree.inorder(tree.root, fnamein);
+        tree.preorder(tree.root, fnamepre);
+        tree.postorder(tree.root, fnamepost);
     }
 
     // Checks if filename given following "<", and attempts to open specified file
@@ -55,9 +59,10 @@ int main(int argc, char* argv[]) {
 
             int result = tree.search(data[0], tree.root, data);
 
-            tree.inorder(tree.root, fname);
-            tree.preorder(tree.root, fname);
-            tree.postorder(tree.root, fname);
+	    
+            tree.inorder(tree.root, fnamein);
+            tree.preorder(tree.root, fnamepre);
+            tree.postorder(tree.root, fnamepost);
         }
     }
 

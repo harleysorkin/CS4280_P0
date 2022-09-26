@@ -54,55 +54,35 @@ int Tree::search(char c, Node *root, std::string s) {
 }
 
 // Inorder traversal
-void Tree::inorder(Node *ptr, char *filename) {
-	filename = strcat(filename, ".inorder");
-	std::ofstream file;
-	file.open(filename);
-std::cout << "file opened" << std::endl;
-	if(!file) {
-		perror("Error: inorder()");
+void Tree::inorder(Node *ptr, char *output) {
+	if(ptr) {
+	    inorder(ptr->left, output);
+            std::ofstream file(output);
+	    file << ptr->middle.front();
+	    file.close();
+            inorder(ptr->right, output);
 	}
-	else {
-		inorder(ptr->left, filename);
-		file << ptr;
-		inorder(ptr->right, filename);
-	}
-
-	file.close();
 }
 
-// Preorder traversal
-void Tree::preorder(Node *ptr, char *filename) {
-	filename = strcat(filename, ".preorder");
-	std::ofstream file;
-	file.open(filename);
-std::cout << "file opened" << std::endl;
-	if(!file) {
-		perror("Error: preorder()");
+// Preorder travsersal
+void Tree::preorder(Node *ptr, char *output) {
+	if(ptr) {
+            std::ofstream file(output);
+	    file << ptr->middle.front();
+	    file.close();
+            preorder(ptr->left, output);
+            preorder(ptr->right, output);
 	}
-	else {
-		file << ptr;
-		preorder(ptr->left, filename);
-		preorder(ptr->right, filename);
-	}
-
-	file.close();
 }
 
-// Postorder traversal
-void Tree::postorder(Node *ptr, char *filename) {
-	filename = strcat(filename, ".postorder");	
-	std::ofstream file;
-	file.open(filename);
-std::cout << "file opened" << std::endl;
-	if(!file) {
-		perror("Error: postorder()");
-	}
-	else {
-		postorder(ptr->left, filename);
-		postorder(ptr->right, filename);
-		file << ptr;
+// Postorder trasversal
+void Tree::postorder(Node *ptr, char *output) {
+	if(ptr) {
+            postorder(ptr->left, output);
+            postorder(ptr->right, output);
+	    std::ofstream file(output);
+            file << ptr->middle.front();
+	    file.close();
 	}
 
-	file.close();
 }
